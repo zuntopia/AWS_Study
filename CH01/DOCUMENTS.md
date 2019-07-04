@@ -1,9 +1,20 @@
-# IAM Role
+# Global infrastructure
+* Region
+* Edge Location
+  * Route 53, CloudFront
+  * Caching
 
-Account -
+# Scope
+* Global
+* Region
+* AZ (가용영역)
+
+# IAM Role
+> Account / User
 
 ### User
  - Management console
+ - Access key given by each user
  - Progmatic Access <- CLI / SDK 
 
 Access Key
@@ -14,21 +25,27 @@ Access Key
 ### Policy
   - type: json
   - permission
-     - AWS 관리형
-     - AWS 고객관리형
+     - 자격
+     - 자원
+  - AWS 관리형
+  - AWS 고객관리형
   - Condition ex 1) MFA
   - Conditoin ex 2) Source IP
 
+### Role
+  - 임시자격증명
+  - Single Sign On
+  - Cross-Account Access
+    - EC2 - Instance Profile
 
 ### Group / 최소권한 정책
 1) User 는 기본적으로 권한이 없음
 2) Group 에 policy 적용 
 3) User 를 Group 에 추가
 
-### Role
-| 제일 중요함
-* 
-
+# Organization
+* Account
+* Service policy
 
 # 실습
 
@@ -44,6 +61,17 @@ Access Key
 * network
 * security group
 
+# CLI
+* aws configure 
+  * ~/.aws/credentials
+  * ~/.aws/cnofig
+
+# System Manager
+#CloudFormation
+#OpsWorks
+
+#EC2
+* 휘발성 / 항시성 데이터에 대해서 판단 필요
 ### AMI - Amazon Machine Image
 * 공개된 이미지 / 직접 생성 등 가능
 * 재사용 가능하게 / provisioning
@@ -52,6 +80,10 @@ Access Key
 ### Instance Type
 * t2.micro ...
 
+### Storage
+* EBS
+* instance store
+
 ### Netowrk
 * VPC, subnet, ...
 
@@ -59,8 +91,8 @@ Access Key
 * 재사용 가능
 * 포트 / 소스(접근가능한) address
 
-### (optional) IAM Role
-
+### Instance Profile
+* IAM Role
 
 ### (Optional) User Data
 * 사용자가 직접 추가하는 데이터
@@ -69,11 +101,19 @@ Access Key
 * Instance 구성 뒤 start->pending -> running -> stop -> pending -> running -> stop -> Terminate
 > pending 이후 metadata 초기화
 
-### EBS
-* Elastic Block Store
+# Pricing
+* On-demand
+* spot
+* Dedicated-instances
+
+# Elastic Block Store
  * 네트워크 분리 가능
 
-# Instance profile
-*
+# Elastic Load Balancing
+* Application / network / classig
 
-# Launch Template
+# Auto Scaling
+* Launch Configuration
+* Launch Template
+* Min/Max/Desired
+* Instance Lifecycle Hook
