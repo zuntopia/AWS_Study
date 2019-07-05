@@ -15,7 +15,7 @@ Chapter 3 실습 - Auto Sacaling
 * 좀비
 * 분실
 
-# Lambda Function
+### Lambda Function
 > 훅+트리거링 -> script 실행
 > 비용 효율화
 > Free Tier 있음!!
@@ -74,6 +74,11 @@ Chapter 3 실습 - Auto Sacaling
 
 ### DynamoDB
 * Partition Key
+* Accellator
+
+### ElasticCache
+* in-memory DB
+* Redis
 
 ### Amazon DMS
 * DB 이전지원 -> 양쪽중 하나는 AWS에 있어야됨
@@ -100,6 +105,9 @@ Chapter 3 실습 - Auto Sacaling
 * Peering + routing table 설정 필요
 * VPC 마다 internet gateway 필요
 * NAT 도 이웃 VPC 사용 불가
+  * Interface
+  * Gateway
+  * Fort-forwarding에 따른 차이
 * cross-account, cross-region 지원
 * Transit Gateway
   * Attachment 생성 <- 하나의 VPC 에 종속적임
@@ -164,6 +172,7 @@ Chapter 3 실습 - Auto Sacaling
 * Standard-IA
 * Glacier
   * Vault / Archive
+  * Log 저장에 활용
 * object Lifecycle
 
 ### 그 외
